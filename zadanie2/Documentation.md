@@ -14,7 +14,7 @@ Walidacja podanego stringa
     
     stringToValidate = [String]
     
-    Podajemy stringa, którego chcemy zwalidować pod zawartości.
+    Podajemy stringa, którego chcemy zwalidować pod względem zawartości.
     
 - Odpowiedzi:
 
@@ -35,3 +35,21 @@ Walidacja podanego stringa
 
     - Jeśli string złożony jest z małych oraz dużych liter:        
         {"structure": "MixedCase"}
+
+- Przykłady wywołań:
+    
+    - /validate?stringToValidate=hejHej
+        
+        Odpowiedź:
+        
+        {
+            "structure": "MixedCase"
+        }
+
+    - /validate?stringToValidate=123H
+
+        Odpowiedź:
+        
+        {
+            "structure": "Mixed letters and numbers"
+        }
