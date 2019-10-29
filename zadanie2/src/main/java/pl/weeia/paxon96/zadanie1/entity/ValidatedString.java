@@ -4,13 +4,13 @@ import java.io.Serializable;
 
 public class ValidatedString  implements Serializable {
 
-    private String string;
+    private String structure;
 
-    public String getString() {
-        return string;
+    public String getStructure() {
+        return structure;
     }
 
-    public ValidatedString(String string) {
-        this.string = string;
+    public ValidatedString(String stringToValidate) {
+        this.structure = stringToValidate;
     }
 }

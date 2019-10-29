@@ -5,35 +5,35 @@ import org.springframework.stereotype.Service;
 @Service
 public class ValidationUtils {
 
-    private static boolean isNumeric(String strVal) {
-        return strVal.matches("-?\\d+(\\.\\d+)?");
+    private static boolean isNumeric(String stringToValidate) {
+        return stringToValidate.matches("-?\\d+(\\.\\d+)?");
     }
 
-    private static boolean isAlphanumeric(String strVal) {
-        return strVal.matches("[^a-zA-Z0-9]+");
+    private static boolean isAlphanumeric(String stringToValidate) {
+        return stringToValidate.matches("[a-zA-Z0-9]+");
     }
 
-    private static boolean containNumbers(String strVal) {
-        return strVal.matches(".*\\d.*");
+    private static boolean containNumbers(String stringToValidate) {
+        return stringToValidate.matches(".*\\d.*");
     }
 
-    private static boolean isUpperCase(String strVal){
-        return strVal.equals(strVal.toUpperCase());
+    private static boolean isUpperCase(String stringToValidate){
+        return stringToValidate.equals(stringToValidate.toUpperCase());
     }
 
-    private static boolean isLowerCase(String strVal){
-        return strVal.equals(strVal.toLowerCase());
+    private static boolean isLowerCase(String stringToValidate){
+        return stringToValidate.equals(stringToValidate.toLowerCase());
     }
 
-    private static boolean isMixedCase(String strVal){
-        return strVal.matches("[a-zA-Z]+");
+    private static boolean isMixedCase(String stringToValidate){
+        return stringToValidate.matches("[a-zA-Z]+");
     }
 
     public String validateString(String stringToValidate){
         if(isNumeric(stringToValidate)){
             return  "Numeric";
-        }else if(isAlphanumeric(stringToValidate)){
-            return  "Alphanumeric";
+        }else if(!isAlphanumeric(stringToValidate)){
+            return  "Contains alphanumeric";
         }else if(containNumbers(stringToValidate)){
             return "Mixed letters and numbers";
         }else if(isUpperCase(stringToValidate)){
