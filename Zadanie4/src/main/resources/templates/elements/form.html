@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8" />
+</head>
+<body>
+<form action="/results" method="GET" th:elements="form">
+    <div class="row">
+        <div class="input-field col s12 m4">
+            <input id="searchingString" name="searchingString" type="text" class="validate" />
+            <label for="searchingString">Imię i nazwisko szukanego pracownika</label>
+        </div>
+    </div>
+
+    <div class="row">
+        <div class="col s12 center-align m4">
+            <button type="submit" class="waves-effect waves-teal btn-flat">Wyszukaj pracownika</button>
+        </div>
+    </div>
+</form>
+</body>
+</html>

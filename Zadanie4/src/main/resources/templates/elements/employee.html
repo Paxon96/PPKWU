@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8" />
+</head>
+<body>
+<div class="row" th:fragment="employee (employee)">
+    <div class="col s12 m6">
+        <div class="card horizontal">
+            <div class="card-image">
+                <img th:src="${employee.avatar}">
+            </div>
+            <div class="card-stacked">
+                <div class="card-content">
+                    <h4  th:text="${employee.academicDegree} + ' ' + ${employee.name}"></h4>
+                    <p th:text="${employee.organization}"></p>
+                </div>
+                <div class="card-action">
+                    <a th:attr="href=${employee.vCardLink}">Pobierz v-card</a>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+</body>
+</html>

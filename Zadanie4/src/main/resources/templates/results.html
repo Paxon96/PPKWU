@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <title>VCard PŁ</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+</head>
+<body>
+<div class="section">
+    <div class="container">
+        <form th:replace="elements/form.html :: form"></form>
+
+        <div th:each="employee: ${employees}">
+            <div th:replace="elements/employee.html :: employee (employee=${employee})"></div>
+        </div>
+    </div>
+</div>
+</body>
+</html>
